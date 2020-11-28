@@ -21,6 +21,7 @@ import { ArticulosFamiliasComponent } from "./components/articulos-familias/arti
 
 
 import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.component";
+import { ClientesComponent } from './components/clientes/clientes/clientes.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.com
     ArticulosComponent,
     ArticulosFamiliasComponent,
     ModalDialogComponent,
+    ClientesComponent,
   ],
   imports: [
     BrowserModule,
