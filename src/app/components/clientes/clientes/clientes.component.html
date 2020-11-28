@@ -51,12 +51,12 @@
 				<th class="text-center">FechaNacimiento</th>
 				<th class="text-center">IdSexo</th>
 				<th class="text-center">IdEstadoCivil</th>
-				<th class="text-center">Calle</th>
-        <th class="text-center">NumeroCalle</th>
+			  <!-- <th class="text-center">Calle</th>   
+        <th class="text-center">NumeroCalle</th>  -->
         <th class="text-center">Localidad</th>
-        <th class="text-center">IdDepartamento</th>
+        <!-- <th class="text-center">IdDepartamento</th>  -->
         <th class="text-center">IdProvincia</th>
-        <th class="text-center">IdPais</th>
+        <!--<th class="text-center">IdPais</th>
         <th class="text-center">FechaIngreso</th>
         <th class="text-center">FechaEgreso</th>
         <th class="text-center">TieneTrabajo</th>
@@ -67,7 +67,7 @@
         <th class="text-center">Clave</th>
         <th class="text-center">IdUsuario</th>
 
-
+        -->
 				<th>Familia</th>
 				<th class="text-center">Activo</th>
 				<th class="text-center text-nowrap">Acciones</th>
@@ -82,12 +82,12 @@
 				<td>{{dto.FechaNacimiento| date:'dd/MM/yyyy'}}</td>
         <td class="text-right">{{dto.IdSexo}}</td>
         <td class="text-right">{{dto.IdEstadoCivil}}</td>
-        <td class="text-right">{{dto.Calle}}</td>
-        <td class="text-right">{{dto.NumeroCalle}}</td>
+        <!--<td class="text-right">{{dto.Calle}}</td>
+        <td class="text-right">{{dto.NumeroCalle}}</td>  -->
         <td class="text-right">{{dto.Localidad}}</td>
-        <td class="text-right">{{dto.IdDepartamento}}</td>
+        <!--<td class="text-right">{{dto.IdDepartamento}}</td>  -->
         <td class="text-right">{{dto.IdProvincia}}</td>
-        <td class="text-right">{{dto.IdPais}}</td>
+        <!--<td class="text-right">{{dto.IdPais}}</td>
 	      <td>{{dto.FechaIngreso| date:'dd/MM/yyyy'}}</td>
   	    <td>{{dto.FechaEgreso| date:'dd/MM/yyyy'}}</td>
         <td class="text-right">{{dto.TieneTrabajo}}</td>
@@ -96,10 +96,11 @@
         <td class="text-right">{{dto.CreditoMaximo}}</td>
         <td class="text-right">{{dto.Mail}}</td>
         <td class="text-right">{{dto.Clave}}</td>
-        <td class="text-right">{{dto.IdUsuario}}</td>
+        <td class="text-right">{{dto.IdUsuario}}</td>    -->
 
 
-				<!--<td>{{GetArticuloFamiliaNombre(dto.IdArticuloFamilia)}}</td>  -->
+				<!--No hay tabla clientefamila
+        <td>{{GetClienteFamiliaNombre(dto.IdClienteFamilia)}}</td>  -->
 				<td>{{dto.Activo ? 'SI' : 'NO'}}</td>
 				<td class="text-center text-nowrap">
 					<button type="button" class="btn btn-sm btn-outline-primary" title="Ver" (click)="Consultar(dto)">
@@ -248,7 +249,7 @@
 <!--campo idSexo-->
 		<div class="form-group row">
 			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdSexo">
-                Sexo <span class="text-danger">*</span>
+                Cliente <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
 				<select name="IdSexo" class="form-control" formControlName="IdSexo"
@@ -264,72 +265,70 @@
                 </span>
 			</div>
 		</div>
-<!-- faltan varios mas -->
 
 
-
-
-		<!--campo codigodebarra-->
+<!--campo idEstadoCivil-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="Stock">
-                Codigo De Barra <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdEstadoCivil">
+                Cliente <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
-				<input type="text" name="CodigoDeBarra" class="form-control" formControlName="CodigoDeBarra"
-        [ngClass]="{'is-invalid': (FormReg.controls.CodigoDeBarra.touched || submitted)  
-            && FormReg.controls.CodigoDeBarra.errors}" />
-				<span class="text-danger" *ngIf="(FormReg.controls.CodigoDeBarra.touched || submitted) 
-                       && FormReg.controls.CodigoDeBarra.errors?.required">
-                    Dato requerido.
-                </span>
-				<span class="text-danger" *ngIf="(FormReg.controls.CodigoDeBarra.touched || submitted) 
-                       && FormReg.controls.CodigoDeBarra.errors?.pattern">
-                    Dato numérico, 13 dígitos.
-                </span>
-			</div>
-		</div>
-
-		<!--campo idarticulofamilia-->
-		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdArticuloFamilia">
-                Familia <span class="text-danger">*</span>
-            </label>
-			<div class="col-sm-6">
-				<select name="IdArticuloFamilia" class="form-control" formControlName="IdArticuloFamilia"
-        [ngClass]="{'is-invalid': (FormReg.controls.IdArticuloFamilia.touched || submitted)  
-            && FormReg.controls.IdArticuloFamilia.errors}" >
-                    <option *ngFor="let opt of Familias" [ngValue]="opt.IdArticuloFamilia">
+				<select name="IdEstadoCivil" class="form-control" formControlName="IdEstadoCivil"
+        [ngClass]="{'is-invalid': (FormReg.controls.IdEstadoCivil.touched || submitted)  
+            && FormReg.controls.IdEstadoCivil.errors}" >
+                    <option *ngFor="let opt of EstadoCiviles" [ngValue]="opt.IdEstadoCivil">
                         ‌{{ opt.Nombre }}
                     <option>
                 </select>
-				<span class="text-danger" *ngIf="(FormReg.controls.IdArticuloFamilia.touched || submitted) 
-                        && FormReg.controls.IdArticuloFamilia.errors?.required">
+				<span class="text-danger" *ngIf="(FormReg.controls.IdEstadoCivil.touched || submitted) 
+                        && FormReg.controls.IdEstadoCivil.errors?.required">
                     Dato requerido.
                 </span>
 			</div>
 		</div>
 
-
-		<!--campo fechaalta-->
+<!--campo idLocalidad-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2">Fecha de alta <span
-                    class="text-danger">*</span></label>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdLocalidad">
+                Cliente <span class="text-danger">*</span>
+            </label>
 			<div class="col-sm-6">
-				<input class="form-control"
-                           name="FechaAlta" formControlName="FechaAlta"
-                           [ngClass]="{'is-invalid': (FormReg.controls.FechaAlta.touched || submitted)  
-            && FormReg.controls.FechaAlta.errors}" />
-
-				<span class="text-danger" *ngIf="(FormReg.controls.FechaAlta.touched || submitted) 
-                       && FormReg.controls.FechaAlta.errors?.required">
+				<select name="IdLocalidad" class="form-control" formControlName="IdLocalidad"
+        [ngClass]="{'is-invalid': (FormReg.controls.IdLocalidad.touched || submitted)  
+            && FormReg.controls.IdLocalidad.errors}" >
+                    <option *ngFor="let opt of Localidades" [ngValue]="opt.IdLocalidad">
+                        ‌{{ opt.Nombre }}
+                    <option>
+                </select>
+				<span class="text-danger" *ngIf="(FormReg.controls.IdLocalidad.touched || submitted) 
+                        && FormReg.controls.IdLocalidad.errors?.required">
                     Dato requerido.
                 </span>
-				<span class="text-danger" *ngIf="(FormReg.controls.FechaAlta.touched || submitted) 
-                       && FormReg.controls.FechaAlta.errors?.pattern">
-                    Dato fecha, formato dd/mm/aaaa.
-        </span>
 			</div>
 		</div>
+
+    <!--campo idProvincia-->
+		<div class="form-group row">
+			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdProvincia">
+                Cliente <span class="text-danger">*</span>
+            </label>
+			<div class="col-sm-6">
+				<select name="IdProvincia" class="form-control" formControlName="IdProvincia"
+        [ngClass]="{'is-invalid': (FormReg.controls.IdProvincia.touched || submitted)  
+            && FormReg.controls.IdProvincia.errors}" >
+                    <option *ngFor="let opt of Provincias" [ngValue]="opt.IdProvincia">
+                        ‌{{ opt.Nombre }}
+                    <option>
+                </select>
+				<span class="text-danger" *ngIf="(FormReg.controls.IdProvincia.touched || submitted) 
+                        && FormReg.controls.IdProvincia.errors?.required">
+                    Dato requerido.
+                </span>
+			</div>
+		</div>
+
+
+<!-- faltan varios mas  pero tienen valores nulos -->
 
 
 		<!--campo activo-->

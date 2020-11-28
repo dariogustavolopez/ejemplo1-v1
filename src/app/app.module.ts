@@ -22,6 +22,7 @@ import { ArticulosFamiliasComponent } from "./components/articulos-familias/arti
 
 import { ModalDialogComponent } from "./components/modal-dialog/modal-dialog.component";
 import { ClientesComponent } from './components/clientes/clientes/clientes.component';
+import { ClientesService } from './services/clientes.service';
 
 @NgModule({
   declarations: [
@@ -49,7 +50,7 @@ import { ClientesComponent } from './components/clientes/clientes/clientes.compo
   entryComponents: [ModalDialogComponent],
   providers: [
      {provide: APP_BASE_HREF, useValue : '/' },
-    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: MyInterceptor, multi: true, providers: [ClientesService] }
   ],
   bootstrap: [AppComponent]
 })
