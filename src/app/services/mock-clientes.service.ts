@@ -6,8 +6,7 @@ import { Cliente, Clientes } from "../models/cliente";
   providedIn: "root"
 })
 export class MockClientesService {
-
-  constructor() { }
+  constructor() {}
   get(Nombre: string, Activo: boolean, pagina: number): any {
     var Lista = Clientes.filter(
      item =>

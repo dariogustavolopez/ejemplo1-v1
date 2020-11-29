@@ -9,11 +9,8 @@ import { of } from "rxjs";
 import { Cliente } from "../models/cliente";
 @Injectable({
   providedIn: "root"
-}
-
-)
+})
 export class ClientesService {
-
 resourceUrl: string;
   constructor(private httpClient: HttpClient) {
     // la barra al final del resourse url es importante para los metodos que concatenan el id del recurso (GetById, Put)
