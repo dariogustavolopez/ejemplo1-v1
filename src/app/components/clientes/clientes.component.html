@@ -7,25 +7,22 @@
             Nombre:
         </label>
 		<div class="col-sm-3">
-			<input type="text" name="Nombre" class="form-control" formControlName="Nombre" maxlength="55"/>
+			<input type="text" class="form-control" formControlName="Nombre" maxlength="55"/>
         </div>
 			<label class="col-form-label col-sm-2  text-left">
             Activo:
         </label>
 			<div class="col-sm-3">
-				<select class="form-control" name="Activo" formControlName="Activo">
+				<select class="form-control" formControlName="Activo">
             <option *ngFor="let opt of OpcionesActivo" [ngValue]="opt.Id">
                         ‌{{ opt.Nombre }}
             <option>            
           </select>
 			</div>
 		</div>
-
-
-
 		<!-- Botones -->
 		<div class="row justify-content-center">
-			<button type="button" class="btn btn-primary" (click)="Buscar()">
+			<button type="button" class="btn btn-primary" (click)="Pagina=1; Buscar();">
             <span class="fas fa-search"> </span> Consultar
         </button>
         &nbsp;
@@ -40,9 +37,6 @@
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
-<li class="nav-item">
-                <a class="nav-link"  routerLink="/clientes" title="Gestionar Clientes">Clientes</a>
-            </li>
         <th class="text-center">IdCliente</th>
         <th class="text-center">Nombre</th>
         <th class="text-center">Cuit</th>
@@ -148,7 +142,7 @@
 	<fieldset [disabled]="AccionABMC==='C'">
 		<!--campo nombre-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="Nombre">Nombre
+			<label class="col-form-label col-sm-2 col-sm-offset-2" >Nombre
       <span class="text-danger">*</span></label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control" formControlName="Nombre" 
@@ -158,12 +152,10 @@
       FormReg.controls.Nombre.errors?.required">
                     Dato requerido.
                 </span>
-      <span class="text-danger" *ngIf="(FormReg.controls.Nombre.touched || submitted) 
-                       && (FormReg.controls.Nombre.errors?.minlength || FormReg.controls.Nombre.errors?.maxlength) ">
-                    Dato texto, 4 a 55 caracteres.
-                </span>
-              
-			</div>
+      <span class="text-danger" *ngIf="(FormReg.controls.Nombre.errors?.minlength|| (FormReg.controls.Nombre.errors?.maxlength)">
+                       Dato texto, 4 a 55 caracteres.
+      </span>
+     </div>
 		</div>
 
 		<!--campo cuit-->
@@ -178,28 +170,26 @@
                        && FormReg.controls.Cuit.errors?.required">
                     Dato requerido.
                 </span>
-				<span class="text-danger" *ngIf="(FormReg.controls.Cuit.touched || submitted) 
-               && FormReg.controls.Cuit.errors?.pattern">
+				<span class="text-danger" *ngIf=" FormReg.controls.Cuit.errors?.pattern">
                     Dato numérico, 11 dígitos.
                 </span>
 			</div>
 		</div>
 
-    	<!--campo IdTipoDocumento-->
+    	<!--IdTipoDocumento-->
 		<div class="row form-group">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdTipoDocumento">IdTipoDocumento<span
+			<label class="col-form-label col-sm-2 col-sm-offset-2"> TipoDocumento<span
                     class="text-danger">*</span></label>
 			<div class="col-sm-6">
-				<input type="text" name="IdTipoDocumento" class="form-control" formControlName="IdTipoDocumento"
+				<input type="text"  class="form-control" formControlName="IdTipoDocumento"
             [ngClass]="{'is-invalid': (FormReg.controls.IdTipoDocumento.touched || submitted)  
             && FormReg.controls.IdTipoDocumento.errors}" />
 				<span class="text-danger" *ngIf="(FormReg.controls.IdTipoDocumento.touched || submitted) 
                        && FormReg.controls.IdTipoDocumento.errors?.required">
                     Dato requerido.
                 </span>
-				<span class="text-danger" *ngIf="(FormReg.controls.IdTipoDocumento.touched || submitted) 
-               && FormReg.controls.IdTipoDocumento.errors?.pattern">
-                    Dato numérico, 8 dígitos.
+				<span class="text-danger" *ngIf=" FormReg.controls.IdTipoDocumento.errors?.pattern">
+                    Dato 8 caracteres.
                 </span>
 			</div>
 		</div>
@@ -207,19 +197,18 @@
 
 		<!--campo NumeroDocumento-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="NumeroDocumento">
+			<label class="col-form-label col-sm-2 col-sm-offset-2"
                 NumeroDocumento <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
-				<input type="text" name="NumeroDocumento" class="form-control" formControlName="NumeroDocumento"
+				<input type="text" class="form-control" formControlName="NumeroDocumento"
         [ngClass]="{'is-invalid': (FormReg.controls.NumeroDocumento.touched || submitted)  
             && FormReg.controls.NumeroDocumento.errors}" />
 				<span class="text-danger" *ngIf="(FormReg.controls.NumeroDocumento.touched || submitted) 
                         && FormReg.controls.NumeroDocumento.errors?.required">
                     Dato requerido.
                 </span>
-				<span class="text-danger" *ngIf="(FormReg.controls.NumeroDocumento.touched || submitted) 
-                        && FormReg.controls.NumeroDocumento.errors?.pattern">
+				<span class="text-danger" *ngIf="FormReg.controls.NumeroDocumento.errors?.pattern">
                     Dato numérico, 8 dígitos.
                 </span>
 			</div>
@@ -231,7 +220,7 @@
                     class="text-danger">*</span></label>
 			<div class="col-sm-6">
 				<input class="form-control"
-                           name="FechaNacimiento" formControlName="FechaNacimiento"
+                           name="FechaNacimiento" 
                            [ngClass]="{'is-invalid': (FormReg.controls.FechaNacimiento.touched || submitted)  
             && FormReg.controls.FechaNacimiento.errors}" />
 
@@ -239,8 +228,7 @@
                        && FormReg.controls.FechaNacimiento.errors?.required">
                     Dato requerido.
                 </span>
-				<span class="text-danger" *ngIf="(FormReg.controls.FechaNacimiento.touched || submitted) 
-                       && FormReg.controls.FechaNacimiento.errors?.pattern">
+				<span class="text-danger" *ngIf="FormReg.controls.FechaNacimiento.errors?.pattern">
                     Dato fecha, formato dd/mm/aaaa.
         </span>
 			</div>
@@ -248,35 +236,32 @@
 
 <!--campo idSexo-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdSexo">
-                Cliente <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" 
+                Sexo <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
 				<select name="IdSexo" class="form-control" formControlName="IdSexo"
         [ngClass]="{'is-invalid': (FormReg.controls.IdSexo.touched || submitted)  
-            && FormReg.controls.IdSexo.errors}" >
-                    <option *ngFor="let opt of Sexos" [ngValue]="opt.IdSexo">
-                        ‌{{ opt.Nombre }}
-                    <option>
-                </select>
-				<span class="text-danger" *ngIf="(FormReg.controls.IdSexo.touched || submitted) 
+            && FormReg.controls.IdSexo.errors}" />
+            <span class="text-danger" *ngIf="(FormReg.controls.IdSexo.touched || submitted) 
                         && FormReg.controls.IdSexo.errors?.required">
                     Dato requerido.
+                </span>
+            <span class="text-danger" *ngIf="FormReg.controls.IdSexo.errors?.pattern">
+                    Dato hasta 8 caracteres.
                 </span>
 			</div>
 		</div>
 
-
 <!--campo idEstadoCivil-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdEstadoCivil">
-                Cliente <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" EstadoCivil <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
-				<select name="IdEstadoCivil" class="form-control" formControlName="IdEstadoCivil"
+				<select class="form-control" formControlName="IdEstadoCivil"
         [ngClass]="{'is-invalid': (FormReg.controls.IdEstadoCivil.touched || submitted)  
             && FormReg.controls.IdEstadoCivil.errors}" >
-                    <option *ngFor="let opt of EstadoCiviles" [ngValue]="opt.IdEstadoCivil">
+                    <option *ngFor="let opt of EstadosCiviles" [ngValue]="opt.IdEstadoCivil">
                         ‌{{ opt.Nombre }}
                     <option>
                 </select>
@@ -289,11 +274,10 @@
 
 <!--campo idLocalidad-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdLocalidad">
-                Cliente <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" Localidad <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
-				<select name="IdLocalidad" class="form-control" formControlName="IdLocalidad"
+				<select class="form-control" formControlName="IdLocalidad"
         [ngClass]="{'is-invalid': (FormReg.controls.IdLocalidad.touched || submitted)  
             && FormReg.controls.IdLocalidad.errors}" >
                     <option *ngFor="let opt of Localidades" [ngValue]="opt.IdLocalidad">
@@ -309,11 +293,10 @@
 
     <!--campo idProvincia-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="IdProvincia">
-                Cliente <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" Provincia <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
-				<select name="IdProvincia" class="form-control" formControlName="IdProvincia"
+				<select class="form-control" formControlName="IdProvincia"
         [ngClass]="{'is-invalid': (FormReg.controls.IdProvincia.touched || submitted)  
             && FormReg.controls.IdProvincia.errors}" >
                     <option *ngFor="let opt of Provincias" [ngValue]="opt.IdProvincia">
@@ -333,9 +316,9 @@
 
 		<!--campo activo-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="Activo">Activo</label>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" >Activo</label>
 			<div class="col-sm-6">
-				<select name="Activo" disabled class="form-control" formControlName="Activo">
+				<select disabled class="form-control" formControlName="Activo">
                     <option *ngFor="let opt of OpcionesActivo" [ngValue]="opt.Id">
                         ‌{{ opt.Nombre }}
                     <option>

@@ -2,7 +2,6 @@ export class ArticuloFamilia {
   IdArticuloFamilia: number;
   Nombre: string;
 }
-//Codigo Hardcodeado los registros de la base datos tabla articulos
 export const ArticulosFamilias: ArticuloFamilia[] = [
   { IdArticuloFamilia: 1, Nombre: "Accesorios" },
   { IdArticuloFamilia: 2, Nombre: "Audio" },
