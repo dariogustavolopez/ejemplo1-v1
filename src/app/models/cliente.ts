@@ -11,8 +11,7 @@ export class Cliente {
   IdProvincia: string;
   Activo: boolean;
 };
-export const Clientes:
-Cliente[] = [
+export const Clientes:Cliente[] = [
 {
 IdCliente:	3,
 Nombre:	"SOSA, SIMONA",
@@ -24,6 +23,7 @@ IdSexo:	"F",
 IdEstadoCivil:	"S",
 Localidad:	"CORDOBA CAPITAL",
 IdProvincia:	2,
+Activo:false
 },
 {
 IdCliente:	4,
@@ -36,6 +36,7 @@ IdSexo:	"M",
 IdEstadoCivil:	"S",
 Localidad:	"CORDOBA CAPITAL",
 IdProvincia:	3,
+Activo:false
 },
 {	
 IdCliente:	5,
@@ -48,6 +49,7 @@ IdSexo:	"M",
 IdEstadoCivil:	"Z",
 Localidad:	"CORDOBA CAPITAL",
 IdProvincia:	4,
+Activo:true
 },
 {
 IdCliente:	6,
@@ -55,36 +57,28 @@ Nombre:	"ECHENIQUE, EFRAIN",
 Cuit:	2380009119,
 IdTipoDocumento:	"DNI",
 NumeroDocumento:	8000911,
-FechaNacimiento,	"1948-06-18T00:00:00",
+FechaNacimiento:	"1948-06-18T00:00:00",
 IdSexo:	"M",
 IdEstadoCivil:	"C",
 Localidad:	"CORDOBA CAPITAL",
 IdProvincia:	5,
+Activo:true
 },
 {	
-IdCliente	7
-Nombre	"VALDEZ, VICENTA"
-Cuit	2754786641
-IdTipoDocumento	"CF"
-NumeroDocumento	5478664
-FechaNacimiento	"1946-10-27T00:00:00"
-IdSexo	"F"
-IdEstadoCivil	"Z"
-Calle	null
-NumeroCalle	null
-Localidad	"CORDOBA CAPITAL"
-IdDepartamento	null
-IdProvincia	6
-IdPais	null
-FechaIngreso	null
-FechaEgreso	null
-TieneTrabajo	null
-TieneAuto	null
-TieneCasa	null
-CreditoMaximo	null
-Mail	null
-Clave	null
-IdUsuario	null
+IdCliente:	7,
+Nombre:	"VALDEZ, VICENTA";
+Cuit:	2754786641,
+IdTipoDocumento:	"CF",
+NumeroDocumento:	5478664,
+FechaNacimiento:	"1946-10-27T00:00:00",
+IdSexo:	"F",
+IdEstadoCivil:	"Z",
+Localidad:	"CORDOBA CAPITAL",
+IdProvincia:	6,
+Activo:true
+},
+//*
+<!
 5	
 IdCliente	8
 Nombre	"ALBORNOZ, SILVIA BEATRIZ"
@@ -6122,4 +6116,6 @@ CreditoMaximo	null
 Mail	null
 Clave	null
 IdUsuario	null
+
+*/
 ];

@@ -1,11 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Cliente } from "../../models/cliente";
-
 import { MockClientesService } from "../../services/mock-clientes.service";
-
 import { ClientesService } from "../../services/clientes.service";
-
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ModalDialogService } from "../../services/modal-dialog.service";
 
