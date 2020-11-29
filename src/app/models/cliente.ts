@@ -77,56 +77,33 @@ Localidad:	"CORDOBA CAPITAL",
 IdProvincia:	6,
 Activo:true
 },
-//*
-<!
-5	
-IdCliente	8
-Nombre	"ALBORNOZ, SILVIA BEATRIZ"
-Cuit	2454098991
-IdTipoDocumento	"CF"
-NumeroDocumento	5409899
-FechaNacimiento	"1946-08-15T00:00:00"
-IdSexo	"F"
-IdEstadoCivil	"C"
-Calle	null
-NumeroCalle	null
-Localidad	"CORDOBA CAPITAL"
-IdDepartamento	null
-IdProvincia	null
-IdPais	null
-FechaIngreso	null
-FechaEgreso	null
-TieneTrabajo	null
-TieneAuto	null
-TieneCasa	null
-CreditoMaximo	null
-Mail	null
-Clave	null
-IdUsuario	null
-6	
-IdCliente	9
-Nombre	"SOSA, CLEOFO MERCEDES"
-Cuit	2063919986
-IdTipoDocumento	"CF"
-NumeroDocumento	6391998
-FechaNacimiento	"1943-09-25T00:00:00"
-IdSexo	"F"
-IdEstadoCivil	"Z"
-Calle	null
-NumeroCalle	null
-Localidad	"CORDOBA CAPITAL"
-IdDepartamento	null
-IdProvincia	null
-IdPais	null
-FechaIngreso	null
-FechaEgreso	null
-TieneTrabajo	null
-TieneAuto	null
-TieneCasa	null
-CreditoMaximo	null
-Mail	null
-Clave	null
-IdUsuario	null
+{
+IdCliente:	8,
+Nombre:	"ALBORNOZ, SILVIA BEATRIZ",
+Cuit:	2454098991,
+IdTipoDocumento:	"CF",
+NumeroDocumento:	5409899,
+FechaNacimiento:	"1946-08-15T00:00:00",
+IdSexo:	"F",
+IdEstadoCivil:	"Z",
+Localidad:	"CORDOBA CAPITAL",
+Activo:true
+},
+{
+IdCliente:	9,
+Nombre:	"SOSA, CLEOFO MERCEDES",
+Cuit:	2063919986,
+IdTipoDocumento:	"CF",
+NumeroDocumento:	6391998,
+FechaNacimiento:	"1943-09-25T00:00:00",
+IdSexo:	"F",
+IdEstadoCivil:	"Z",
+Localidad:	"CORDOBA CAPITAL",
+Activo:true
+},
+
+
+{
 7	
 IdCliente	10
 Nombre	"MARTINEZ, JULIA AZUCENA"
