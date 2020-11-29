@@ -37,7 +37,7 @@
 	<table class="table table-bordered table-striped">
 		<thead>
 			<tr>
-        <th class="text-center">IdCliente</th>
+        <!--<th class="text-center">IdCliente</th>  -->
         <th class="text-center">Nombre</th>
         <th class="text-center">Cuit</th>
 				<th class="text-center">IdTipoDocumento</th>
@@ -61,8 +61,8 @@
         <th class="text-center">Clave</th>
         <th class="text-center">IdUsuario</th>
 
-        -->
-				<th>Familia</th>
+        
+				<th>Familia</th>  -->
 				<th class="text-center">Activo</th>
 				<th class="text-center text-nowrap">Acciones</th>
 			</tr>
@@ -140,6 +140,7 @@
 <form name="FormReg" [formGroup]='FormReg' *ngIf="AccionABMC != 'L'" class="bg-light">
 
 	<fieldset [disabled]="AccionABMC==='C'">
+    
 		<!--campo nombre-->
 		<div class="form-group row">
 			<label class="col-form-label col-sm-2 col-sm-offset-2" >Nombre
@@ -160,10 +161,10 @@
 
 		<!--campo cuit-->
 		<div class="row form-group">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" for="Cuit">Cuit<span
+			<label class="col-form-label col-sm-2 col-sm-offset-2"> Cuit<span
                     class="text-danger">*</span></label>
 			<div class="col-sm-6">
-				<input type="text" name="Cuit" class="form-control" formControlName="Cuit"
+				<input type="text" class="form-control" formControlName="Cuit"
             [ngClass]="{'is-invalid': (FormReg.controls.Cuit.touched || submitted)  
             && FormReg.controls.Cuit.errors}" />
 				<span class="text-danger" *ngIf="(FormReg.controls.Cuit.touched || submitted) 
@@ -176,9 +177,9 @@
 			</div>
 		</div>
 
-    	<!--IdTipoDocumento-->
+    	<!--  revisar si es select o caja de texto IdTipoDocumento-->
 		<div class="row form-group">
-			<label class="col-form-label col-sm-2 col-sm-offset-2"> TipoDocumento<span
+			<label class="col-form-label col-sm-2 col-sm-offset-2"> Tipo de Documento<span
                     class="text-danger">*</span></label>
 			<div class="col-sm-6">
 				<input type="text"  class="form-control" formControlName="IdTipoDocumento"
@@ -197,8 +198,8 @@
 
 		<!--campo NumeroDocumento-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2"
-                NumeroDocumento <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2">
+                Numero de Documento <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
 				<input type="text" class="form-control" formControlName="NumeroDocumento"
@@ -216,11 +217,11 @@
 
 <!--campo fechaNacimiento-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2">FechaNacimiento <span
+			<label class="col-form-label col-sm-2 col-sm-offset-2">Fecha de Nacimiento <span
                     class="text-danger">*</span></label>
 			<div class="col-sm-6">
 				<input class="form-control"
-                           name="FechaNacimiento" 
+                           formControlName="FechaNacimiento" 
                            [ngClass]="{'is-invalid': (FormReg.controls.FechaNacimiento.touched || submitted)  
             && FormReg.controls.FechaNacimiento.errors}" />
 
@@ -255,7 +256,7 @@
 
 <!--campo idEstadoCivil-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" EstadoCivil <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" >Estado Civil <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
 				<select class="form-control" formControlName="IdEstadoCivil"
@@ -274,7 +275,7 @@
 
 <!--campo idLocalidad-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" Localidad <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" >Localidad <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
 				<select class="form-control" formControlName="IdLocalidad"
@@ -293,7 +294,7 @@
 
     <!--campo idProvincia-->
 		<div class="form-group row">
-			<label class="col-form-label col-sm-2 col-sm-offset-2" Provincia <span class="text-danger">*</span>
+			<label class="col-form-label col-sm-2 col-sm-offset-2" >Provincia <span class="text-danger">*</span>
             </label>
 			<div class="col-sm-6">
 				<select class="form-control" formControlName="IdProvincia"

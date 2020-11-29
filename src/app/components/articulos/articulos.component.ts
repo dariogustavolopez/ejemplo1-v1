@@ -48,10 +48,10 @@ export class ArticulosComponent implements OnInit {
 
   constructor(
     public formBuilder: FormBuilder,
-    private articulosService: MockArticulosService,
-    private articulosFamiliasService: MockArticulosFamiliasService,
-    //private articulosService: ArticulosService,
-    //private articulosFamiliasService: ArticulosFamiliasService,
+    //private articulosService: MockArticulosService,
+    //private articulosFamiliasService: MockArticulosFamiliasService,
+    private articulosService: ArticulosService,
+    private articulosFamiliasService: ArticulosFamiliasService,
     private modalDialogService: ModalDialogService
   ) {}
 
@@ -96,7 +96,7 @@ export class ArticulosComponent implements OnInit {
 
   Agregar() {
     this.AccionABMC = "A";
-    this.FormReg.reset();
+    this.FormReg.reset({Activo: true});
     this.submitted = false;
     //this.FormReg.markAsPristine();
     this.FormReg.markAsUntouched();
